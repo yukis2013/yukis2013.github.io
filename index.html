@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shigemoto Lab · Individual &amp; Community Resilience · University of Florida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F3EE;
+  --ink:#23262E;
+  --ink-soft:#3A3F4B;
+  --slate:#5A6272;
+  --gold:#B98A2E;
+  --gold-bright:#D9A93F;
+  --line:#DAD8CF;
+  --card:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Public Sans',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.65;
+  font-size:17px;
+}
+
+/* ---------- Nav ---------- */
+nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(35,38,46,.92);backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(217,169,63,.25);
+}
+.nav-inner{
+  max-width:1080px;margin:0 auto;padding:14px 24px;
+  display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+}
+.nav-brand{color:#F4F3EE;text-decoration:none;font-family:'Shippori Mincho',serif;font-weight:600;font-size:1.05rem;letter-spacing:.02em}
+.nav-brand span{color:var(--gold-bright)}
+.nav-links{display:flex;gap:26px;flex-wrap:wrap}
+.nav-links a{
+  color:#C9CBD2;text-decoration:none;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;
+  font-family:'IBM Plex Mono',monospace;
+}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--gold-bright)}
+.nav-links a.lang{border-left:1px solid rgba(217,169,63,.35);padding-left:22px;color:var(--gold-bright)}
+a:focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px}
+
+/* ---------- Hero ---------- */
+header{
+  background:var(--ink);color:#EDEBE4;position:relative;overflow:hidden;
+}
+.hero-inner{
+  max-width:1080px;margin:0 auto;padding:104px 24px 120px;position:relative;z-index:2;
+}
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold-bright);margin-bottom:26px;
+}
+h1{
+  font-family:'Shippori Mincho',serif;font-weight:600;
+  font-size:clamp(2.1rem,5vw,3.3rem);line-height:1.28;max-width:21ch;
+}
+.hero-sub{
+  margin-top:28px;max-width:58ch;color:#B8BAC2;font-size:1.06rem;
+}
+.hero-sub strong{color:#EDEBE4;font-weight:500}
+.hero-cta{margin-top:40px;display:flex;gap:16px;flex-wrap:wrap}
+.btn{
+  display:inline-block;text-decoration:none;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;
+  font-family:'IBM Plex Mono',monospace;padding:13px 24px;border:1px solid var(--gold-bright);
+  transition:background .2s,color .2s;
+}
+.btn-gold{background:var(--gold-bright);color:var(--ink)}
+.btn-gold:hover{background:transparent;color:var(--gold-bright)}
+.btn-ghost{color:var(--gold-bright)}
+.btn-ghost:hover{background:var(--gold-bright);color:var(--ink)}
+
+/* kintsugi seam */
+.seam{position:absolute;inset:0;z-index:1;pointer-events:none}
+.seam path{
+  fill:none;stroke:url(#goldgrad);stroke-width:2.2;stroke-linecap:round;
+  stroke-dasharray:2400;stroke-dashoffset:2400;
+  animation:draw 2.8s ease-out .3s forwards;
+  opacity:.85;
+}
+.seam .branch{stroke-width:1.3;animation-delay:1.4s;animation-duration:1.8s}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){
+  .seam path{animation:none;stroke-dashoffset:0}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- Sections ---------- */
+section{max-width:1080px;margin:0 auto;padding:88px 24px}
+.section-label{
+  font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);display:flex;align-items:center;gap:14px;margin-bottom:18px;
+}
+.section-label::before{content:"";width:34px;height:2px;background:var(--gold)}
+h2{
+  font-family:'Shippori Mincho',serif;font-weight:600;font-size:clamp(1.6rem,3.4vw,2.2rem);
+  line-height:1.3;margin-bottom:22px;max-width:30ch;
+}
+.lede{max-width:66ch;color:var(--ink-soft)}
+
+/* research grid */
+.research-grid{
+  margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;
+}
+.area{
+  background:var(--card);border:1px solid var(--line);padding:30px 28px 32px;position:relative;
+}
+.area::before{
+  content:"";position:absolute;top:0;left:0;width:44px;height:3px;background:var(--gold-bright);
+}
+.area h3{font-family:'Shippori Mincho',serif;font-weight:600;font-size:1.12rem;margin-bottom:12px;line-height:1.4}
+.area p{font-size:.94rem;color:var(--slate)}
+.divider{border:none;border-top:1px solid var(--line);max-width:1080px;margin:0 auto}
+
+/* people */
+.people-grid{margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.person{background:var(--card);border:1px solid var(--line)}
+.person .photo{
+  aspect-ratio:1/1;background:linear-gradient(135deg,#E7E5DD 0%,#D8D6CD 100%);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.1em;color:#9A988F;text-transform:uppercase;
+  overflow:hidden;
+}
+.person .photo img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92)}
+.person .info{padding:20px 22px 24px}
+.person h3{font-family:'Shippori Mincho',serif;font-size:1.05rem;font-weight:600}
+.person .role{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin:6px 0 10px}
+.person p{font-size:.9rem;color:var(--slate)}
+
+/* publications */
+.pub-list{margin-top:44px;border-top:1px solid var(--line)}
+.pub{
+  display:grid;grid-template-columns:86px 1fr;gap:24px;padding:24px 4px;border-bottom:1px solid var(--line);
+}
+.pub .year{font-family:'IBM Plex Mono',monospace;font-size:.85rem;color:var(--gold);padding-top:3px}
+.pub .cite{font-size:.96rem;color:var(--ink-soft)}
+.pub .cite em{font-style:italic}
+.pub .cite .doi{font-size:.82rem;color:var(--slate)}
+.pub-more{margin-top:26px;font-size:.94rem;color:var(--slate)}
+.pub-more a{color:var(--gold)}
+@media(max-width:560px){.pub{grid-template-columns:1fr;gap:6px}}
+
+/* join */
+.join-wrap{
+  margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;
+}
+.join-card{background:var(--card);border:1px solid var(--line);padding:30px 28px}
+.join-card h3{font-family:'Shippori Mincho',serif;font-size:1.1rem;font-weight:600;margin-bottom:12px}
+.join-card p,.join-card li{font-size:.94rem;color:var(--slate)}
+.join-card ul{padding-left:20px;margin-top:8px}
+.join-card a{color:var(--gold);text-decoration-color:rgba(185,138,46,.4)}
+
+/* footer */
+footer{background:var(--ink);color:#B8BAC2;margin-top:40px}
+.footer-inner{
+  max-width:1080px;margin:0 auto;padding:56px 24px;display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;
+}
+.footer-inner h4{font-family:'Shippori Mincho',serif;color:#EDEBE4;font-weight:600;margin-bottom:10px}
+.footer-inner p{font-size:.9rem}
+.footer-inner a{color:var(--gold-bright);text-decoration:none}
+.fineprint{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;color:#7B7F8A;align-self:flex-end}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top">Shigemoto <span>Lab</span></a>
+    <div class="nav-links">
+      <a href="#research">Research</a>
+      <a href="#people">People</a>
+      <a href="#publications">Publications</a>
+      <a href="#join">Join Us</a>
+      <a class="lang" href="ja/index.html" lang="ja" hreflang="ja">日本語</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <svg class="seam" viewBox="0 0 1200 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="goldgrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#8F6A1F"/>
+        <stop offset="45%" stop-color="#D9A93F"/>
+        <stop offset="100%" stop-color="#F0CE7A"/>
+      </linearGradient>
+    </defs>
+    <path d="M 1200 40 C 1050 120, 980 90, 900 180 C 830 260, 870 320, 780 380 C 700 435, 720 500, 640 560"/>
+    <path class="branch" d="M 890 190 C 940 240, 1010 250, 1080 235"/>
+    <path class="branch" d="M 775 385 C 730 430, 660 445, 600 430"/>
+  </svg>
+  <div class="hero-inner">
+    <p class="eyebrow">University of Florida · Counseling Psychology</p>
+    <h1>Resilience lives in people, and in the communities around them.</h1>
+    <p class="hero-sub">We study how <strong>individuals and communities</strong> withstand, recover, and grow in the face of adversity. Our work spans personal trauma and community-wide disaster.</p>
+    <div class="hero-cta">
+      <a class="btn btn-gold" href="#join">Prospective Students</a>
+      <a class="btn btn-ghost" href="#research">Our Research</a>
+    </div>
+  </div>
+</header>
+
+<section id="research">
+  <p class="section-label">Research</p>
+  <h2>Resilience at two levels, and the growth between them</h2>
+  <p class="lede">Recovery after adversity is never only an individual story or only a community story. Our research examines resilience at both levels: how people intentionally grow, and how the places they live shape that growth. Posttraumatic growth (PTG) serves as a central outcome connecting the two.</p>
+  <div class="research-grid">
+    <article class="area">
+      <h3>Individual resilience &amp; growth</h3>
+      <p>How people adapt and intentionally grow after trauma and adversity, including personal growth initiative (PGI), meaning-making, rumination, and coping. We also ask when reported posttraumatic growth reflects genuine change.</p>
+    </article>
+    <article class="area">
+      <h3>Community resilience</h3>
+      <p>How community resources, social cohesion, and place shape recovery after hurricanes, wildfires, and public health crises. We ask why some communities fare better than their circumstances predict.</p>
+    </article>
+    <article class="area">
+      <h3>Methods and measurement</h3>
+      <p>Rigorous methods to connect the two levels, including structural equation modeling, latent growth and mixture modeling, multilevel modeling, and intensive longitudinal (daily diary) designs.</p>
+    </article>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="people">
+  <p class="section-label">People</p>
+  <h2>Who we are</h2>
+  <div class="people-grid">
+    <article class="person">
+      <div class="photo"><img src="assets/yuki.jpg" alt="Yuki Shigemoto"></div>
+      <div class="info">
+        <h3>Yuki Shigemoto, Ph.D.</h3>
+        <p class="role">Principal Investigator</p>
+        <p>Assistant Professor of Counseling Psychology, University of Florida. Ph.D., Texas Tech University. Research on individual and community resilience, posttraumatic growth, and quantitative methods.</p>
+      </div>
+    </article>
+    <article class="person">
+      <div class="photo">Photo</div>
+      <div class="info">
+        <h3>William Giniewski</h3>
+        <p class="role">Doctoral Student</p>
+        <p>Second-year doctoral student in Counseling Psychology. Research on disaster preparedness and resource loss; master's thesis develops the Inland Hurricane Preparedness Scale.</p>
+      </div>
+    </article>
+    <article class="person">
+      <div class="photo">Photo</div>
+      <div class="info">
+        <h3>Meagan Sullivan</h3>
+        <p class="role">Doctoral Student</p>
+        <p>Second-year doctoral student in Counseling Psychology.</p>
+      </div>
+    </article>
+    <article class="person">
+      <div class="photo">Photo</div>
+      <div class="info">
+        <h3>Katherine Landis</h3>
+        <p class="role">Undergraduate Research Assistant</p>
+        <p>Undergraduate research assistant. Presented research on community resilience, resource loss, and wellbeing following the 2025 California wildfires.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="publications">
+  <p class="section-label">Publications</p>
+  <h2>Selected publications</h2>
+  <div class="pub-list">
+    <div class="pub">
+      <span class="year">2026</span>
+      <p class="cite">Shigemoto, Y. (2026). Influence of geographical residence on perceived community resilience: Comparison between people of color and White individuals following Hurricane Harvey. <em>Journal of Health Equity, 3</em>(1), 2606721. <span class="doi">doi: 10.1080/29944694.2025.2606721</span></p>
+    </div>
+    <div class="pub">
+      <span class="year">2025</span>
+      <p class="cite">Shigemoto, Y., &amp; Giniewski, W. (2025). Exploring patterns of short- and mid-term essential resource loss following Hurricane Ike: A mixture modeling approach. <em>Progress in Disaster Science, 28</em>, 100481. <span class="doi">doi: 10.1016/j.pdisas.2025.100481</span></p>
+    </div>
+    <div class="pub">
+      <span class="year">2025</span>
+      <p class="cite">Shigemoto, Y. (2025). The role of personal growth initiative in predicting changes in perceived community resilience during the COVID-19 pandemic: A three-year longitudinal study. <em>Journal of Community &amp; Applied Social Psychology, 35</em>(6), e70179. <span class="doi">doi: 10.1002/casp.70179</span></p>
+    </div>
+    <div class="pub">
+      <span class="year">2025</span>
+      <p class="cite">Shigemoto, Y., &amp; Bhattarai, M. (2025). Longitudinal association between event-related rumination and posttraumatic growth: Latent growth curve mediation model. <em>Stress and Health, 41</em>(4), e70067. <span class="doi">doi: 10.1002/smi.70067</span></p>
+    </div>
+    <div class="pub">
+      <span class="year">2025</span>
+      <p class="cite">Shigemoto, Y., White, A., &amp; Baloch, R. (2025). Effect of engagement in personal growth initiative skills on depression, anxiety, and stress: Multilevel mediation analysis with intensive longitudinal data. <em>Journal of Clinical Psychology, 81</em>, 7-18. <span class="doi">doi: 10.1002/jclp.23749</span></p>
+    </div>
+    <div class="pub">
+      <span class="year">2022</span>
+      <p class="cite">Shigemoto, Y. (2022). Association between daily rumination and posttraumatic growth during the COVID-19 pandemic: An experience sampling method. <em>Psychological Trauma: Theory, Research, Practice, and Policy, 14</em>(2), 229–236. <span class="doi">doi: 10.1037/tra0001061</span></p>
+    </div>
+    <div class="pub">
+      <span class="year">2021</span>
+      <p class="cite">Shigemoto, Y. (2021). Influence of community-level factors on relation between community resilience and posttraumatic growth. <em>Traumatology, 27</em>(3), 326–332. <span class="doi">doi: 10.1037/trm0000285</span></p>
+    </div>
+    <div class="pub">
+      <span class="year">2020</span>
+      <p class="cite">Shigemoto, Y., &amp; Kawachi, I. (2020). Social cohesion and quality of life among survivors of a natural disaster. <em>Quality of Life Research, 29</em>, 3191-3200. <span class="doi">doi: 10.1007/s11136-020-02590-7</span></p>
+    </div>
+  </div>
+  <p class="pub-more">For a complete list of 35+ peer-reviewed publications, see <a href="https://scholar.google.com/citations?user=dNQknAkAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a> or <a href="https://www.researchgate.net/profile/Yuki-Shigemoto" target="_blank" rel="noopener">ResearchGate</a>.</p>
+</section>
+
+<hr class="divider">
+
+<section id="join">
+  <p class="section-label">Join Us</p>
+  <h2>Prospective students &amp; collaborators</h2>
+  <div class="join-wrap">
+    <div class="join-card">
+      <h3>Doctoral students</h3>
+      <p>Dr. Shigemoto is currently accepting doctoral students each year through the APA-accredited Counseling Psychology Ph.D. program at the University of Florida.</p>
+      <ul>
+        <li>Strong fit: interests in resilience, trauma and growth, disaster mental health, or quantitative methods</li>
+        <li>Apply via the <a href="https://psych.ufl.edu/counseling-psychology/about/" target="_blank" rel="noopener">UF Counseling Psychology program</a></li>
+        <li>Questions before applying are welcome. Email with your CV and research interests</li>
+        <li><a href="prospective-students.html">Read the full guide for prospective students</a></li>
+      </ul>
+    </div>
+    <div class="join-card">
+      <h3>Undergraduate research assistants</h3>
+      <p>UF undergraduates interested in gaining research experience in resilience and trauma research are welcome to reach out with a CV and a brief statement of interest.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h4>Shigemoto Lab</h4>
+      <p>Department of Psychology · University of Florida<br>945 Center Dr. · Gainesville, FL 32611</p>
+      <p style="margin-top:10px"><a href="mailto:yshigemoto@ufl.edu">yshigemoto@ufl.edu</a></p>
+    </div>
+    <p class="fineprint">© 2026 Shigemoto Lab</p>
+  </div>
+</footer>
+
+</body>
+</html>

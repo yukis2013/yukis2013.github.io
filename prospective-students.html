@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prospective Students · Shigemoto Lab · University of Florida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F3EE;
+  --ink:#23262E;
+  --ink-soft:#3A3F4B;
+  --slate:#5A6272;
+  --gold:#B98A2E;
+  --gold-bright:#D9A93F;
+  --line:#DAD8CF;
+  --card:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Public Sans',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.65;
+  font-size:17px;
+}
+
+/* ---------- Nav ---------- */
+nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(35,38,46,.92);backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(217,169,63,.25);
+}
+.nav-inner{
+  max-width:1080px;margin:0 auto;padding:14px 24px;
+  display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+}
+.nav-brand{color:#F4F3EE;text-decoration:none;font-family:'Shippori Mincho',serif;font-weight:600;font-size:1.05rem;letter-spacing:.02em}
+.nav-brand span{color:var(--gold-bright)}
+.nav-links{display:flex;gap:26px;flex-wrap:wrap}
+.nav-links a{
+  color:#C9CBD2;text-decoration:none;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;
+  font-family:'IBM Plex Mono',monospace;
+}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--gold-bright)}
+.nav-links a.current{color:var(--gold-bright)}
+.nav-links a.lang{border-left:1px solid rgba(217,169,63,.35);padding-left:22px;color:var(--gold-bright)}
+a:focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px}
+
+/* ---------- Page head ---------- */
+header{background:var(--ink);color:#EDEBE4;position:relative;overflow:hidden}
+.head-inner{max-width:1080px;margin:0 auto;padding:80px 24px 88px;position:relative;z-index:2}
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold-bright);margin-bottom:24px;
+}
+h1{
+  font-family:'Shippori Mincho',serif;font-weight:600;
+  font-size:clamp(2rem,4.4vw,2.9rem);line-height:1.3;max-width:22ch;
+}
+.head-sub{margin-top:24px;max-width:60ch;color:#B8BAC2;font-size:1.05rem}
+.seam{position:absolute;inset:0;z-index:1;pointer-events:none}
+.seam path{
+  fill:none;stroke:url(#goldgrad);stroke-width:2;stroke-linecap:round;
+  stroke-dasharray:1800;stroke-dashoffset:1800;
+  animation:draw 2.4s ease-out .3s forwards;opacity:.8;
+}
+.seam .branch{stroke-width:1.2;animation-delay:1.2s;animation-duration:1.6s}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){
+  .seam path{animation:none;stroke-dashoffset:0}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- Status banner ---------- */
+.status{background:var(--gold-bright);color:var(--ink)}
+.status-inner{
+  max-width:1080px;margin:0 auto;padding:20px 24px;
+  display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;
+}
+.status-tag{
+  font-family:'IBM Plex Mono',monospace;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:500;
+}
+.status-inner p{font-size:.98rem;font-weight:500}
+
+/* ---------- Sections ---------- */
+section{max-width:1080px;margin:0 auto;padding:80px 24px}
+.section-label{
+  font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);display:flex;align-items:center;gap:14px;margin-bottom:18px;
+}
+.section-label::before{content:"";width:34px;height:2px;background:var(--gold)}
+h2{
+  font-family:'Shippori Mincho',serif;font-weight:600;font-size:clamp(1.5rem,3.2vw,2.05rem);
+  line-height:1.32;margin-bottom:22px;max-width:32ch;
+}
+.lede{max-width:66ch;color:var(--ink-soft)}
+.lede a{color:var(--gold)}
+.divider{border:none;border-top:1px solid var(--line);max-width:1080px;margin:0 auto}
+
+/* fit list */
+.fit-list{margin-top:44px;display:grid;gap:2px;background:var(--line);border:1px solid var(--line)}
+.fit{background:var(--card);padding:28px 30px;display:grid;grid-template-columns:1fr;gap:8px}
+.fit h3{font-family:'Shippori Mincho',serif;font-weight:600;font-size:1.08rem}
+.fit p{font-size:.95rem;color:var(--slate);max-width:70ch}
+
+/* mentorship two-col */
+.mentor-wrap{margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.mentor-card{background:var(--card);border:1px solid var(--line);padding:30px 28px}
+.mentor-card h3{font-family:'Shippori Mincho',serif;font-size:1.08rem;font-weight:600;margin-bottom:14px}
+.mentor-card ul{padding-left:20px;display:grid;gap:8px}
+.mentor-card li{font-size:.94rem;color:var(--slate)}
+
+/* footer */
+footer{background:var(--ink);color:#B8BAC2;margin-top:40px}
+.footer-inner{
+  max-width:1080px;margin:0 auto;padding:56px 24px;display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;
+}
+.footer-inner h4{font-family:'Shippori Mincho',serif;color:#EDEBE4;font-weight:600;margin-bottom:10px}
+.footer-inner p{font-size:.9rem}
+.footer-inner a{color:var(--gold-bright);text-decoration:none}
+.fineprint{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;color:#7B7F8A;align-self:flex-end}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">Shigemoto <span>Lab</span></a>
+    <div class="nav-links">
+      <a href="index.html#research">Research</a>
+      <a href="index.html#people">People</a>
+      <a href="index.html#publications">Publications</a>
+      <a class="current" href="prospective-students.html">Join Us</a>
+      <a class="lang" href="ja/prospective-students.html" lang="ja" hreflang="ja">日本語</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <svg class="seam" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="goldgrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#8F6A1F"/>
+        <stop offset="45%" stop-color="#D9A93F"/>
+        <stop offset="100%" stop-color="#F0CE7A"/>
+      </linearGradient>
+    </defs>
+    <path d="M 1200 30 C 1080 90, 1010 70, 940 150 C 880 220, 920 270, 840 330 C 780 375, 800 400, 740 420"/>
+    <path class="branch" d="M 930 160 C 980 205, 1050 215, 1110 200"/>
+  </svg>
+  <div class="head-inner">
+    <p class="eyebrow">Shigemoto Lab · Counseling Psychology</p>
+    <h1>Thinking about applying? Start here.</h1>
+    <p class="head-sub">This page describes what our lab works on and what mentorship here looks like, so you can judge for yourself whether this is the right fit before you apply.</p>
+  </div>
+</header>
+
+<div class="status">
+  <div class="status-inner">
+    <span class="status-tag">Admissions status</span>
+    <p>Accepting doctoral students for Fall 2027. Deadlines and requirements are posted on the <a href="https://psych.ufl.edu/counseling-psychology/about/" target="_blank" rel="noopener" style="color:var(--ink)">UF Counseling Psychology</a> program site.</p>
+  </div>
+</div>
+
+<section id="fit">
+  <p class="section-label">Fit</p>
+  <h2>Who tends to thrive in this lab</h2>
+  <p class="lede">Students who fit well in this lab tend to share the following approaches and attitudes toward research.</p>
+
+  <div class="fit-list">
+    <div class="fit">
+      <h3>Interest in our research</h3>
+      <p>Our lab studies individual and community resilience after adversity, including disaster, trauma, and public health crises. Naturally, we are looking for students who go beyond a broad interest in "trauma" or "resilience": students who can point to a specific paper or project of ours and think about what questions or hypotheses it raises for them.</p>
+    </div>
+    <div class="fit">
+      <h3>Self-direction</h3>
+      <p>You take initiative, manage your own timelines, and when you hit something you do not understand, your first instinct is to look it up, try something, and then bring me a specific question. I am here to advise and to work through hard problems with you. I am not here to assign you your next step each week.</p>
+    </div>
+    <div class="fit">
+      <h3>Willingness to learn quantitative methods</h3>
+      <p>Much of our work uses longitudinal, multilevel, and structural equation modeling. You do not need to be strong in statistics when you arrive, but you do need to be genuinely willing to learn.</p>
+    </div>
+    <div class="fit">
+      <h3>Serious commitment to research during training</h3>
+      <p>Counseling psychology trains both scientists and practitioners, and students here go on to a range of careers. Students who fit this lab are those who invest seriously in research throughout their training, rather than treating it as a requirement to clear. Students considering research-oriented careers are especially welcome.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="mentorship">
+  <p class="section-label">Mentorship</p>
+  <h2>How we work together</h2>
+  <div class="mentor-wrap">
+    <div class="mentor-card">
+      <h3>What you can expect from me</h3>
+      <ul>
+        <li>Regular meetings</li>
+        <li>Hands-on training in quantitative methods, including designs you will not get from coursework alone</li>
+        <li>Support in moving projects toward conference presentations and publication</li>
+        <li>Direct, specific feedback on your work</li>
+        <li>Career guidance. If you are heading toward a path I know less well, I will do my best to connect you with people who know it better</li>
+      </ul>
+    </div>
+    <div class="mentor-card">
+      <h3>What I expect from you</h3>
+      <ul>
+        <li>Come to meetings prepared, with specific questions and your progress</li>
+        <li>Own your projects, including the parts that are tedious</li>
+        <li>Tell me when something is stuck or slipping, early rather than late</li>
+        <li>Take feedback objectively, as being about the work (easier said than done)</li>
+        <li>Support the other students in the lab</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="applying">
+  <p class="section-label">Applying</p>
+  <p class="lede">Admission decisions are made by the <a href="https://psych.ufl.edu/counseling-psychology/about/" target="_blank" rel="noopener">UF Counseling Psychology program</a> as a whole, on the basis of your application materials. Emailing me first will not improve your chances, and applying without contacting me will not hurt them. So there is no need to contact me before you apply. Deadlines, required materials, and eligibility are all described on the program page.</p>
+  <p class="lede" style="margin-top:18px">The best place to tell me that you are interested in this lab and want to do research together is your application itself. That said, if you have read this page and still have a question, you are welcome to write to me at <a href="mailto:yshigemoto@ufl.edu">yshigemoto@ufl.edu</a>, in English or in Japanese. If our work interests you, please apply.</p>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h4>Shigemoto Lab</h4>
+      <p>Department of Psychology · University of Florida<br>945 Center Dr. · Gainesville, FL 32611</p>
+      <p style="margin-top:10px"><a href="mailto:yshigemoto@ufl.edu">yshigemoto@ufl.edu</a></p>
+    </div>
+    <p class="fineprint">© 2026 Shigemoto Lab</p>
+  </div>
+</footer>
+
+</body>
+</html>
