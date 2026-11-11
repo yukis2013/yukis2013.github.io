@@ -3,335 +3,538 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shigemoto Lab · Individual &amp; Community Resilience · University of Florida</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Shigemoto Lab · Individual and Community Resilience · University of Florida</title>
+<meta name="description" content="Shigemoto Lab at the University of Florida studies how individuals and communities recover and grow after adversity.">
+<link rel="alternate" hreflang="en" href="https://shigemotolab.com/">
+<link rel="alternate" hreflang="ja" href="https://shigemotolab.com/ja/">
+<link rel="alternate" hreflang="x-default" href="https://shigemotolab.com/">
 <style>
-:root{
-  --paper:#F4F3EE;
-  --ink:#23262E;
-  --ink-soft:#3A3F4B;
-  --slate:#5A6272;
-  --gold:#B98A2E;
-  --gold-bright:#D9A93F;
-  --line:#DAD8CF;
-  --card:#FFFFFF;
-}
+:root{--ink:#111;--soft:#333;--muted:#555;--line:#ddd;--link:#1a4fa0}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  font-family:'Public Sans',sans-serif;
-  background:var(--paper);
-  color:var(--ink);
-  line-height:1.65;
-  font-size:17px;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;
+  background:#fff;color:var(--ink);line-height:1.7;font-size:17px;
 }
+a{color:var(--link)}
+a:hover{color:#0f3270}
+a:focus-visible{outline:2px solid var(--link);outline-offset:3px}
 
-/* ---------- Nav ---------- */
-nav{
-  position:sticky;top:0;z-index:50;
-  background:rgba(35,38,46,.92);backdrop-filter:blur(8px);
-  border-bottom:1px solid rgba(217,169,63,.25);
-}
-.nav-inner{
-  max-width:1080px;margin:0 auto;padding:14px 24px;
-  display:flex;align-items:baseline;justify-content:space-between;gap:16px;
-}
-.nav-brand{color:#F4F3EE;text-decoration:none;font-family:'Shippori Mincho',serif;font-weight:600;font-size:1.05rem;letter-spacing:.02em}
-.nav-brand span{color:var(--gold-bright)}
-.nav-links{display:flex;gap:26px;flex-wrap:wrap}
-.nav-links a{
-  color:#C9CBD2;text-decoration:none;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;
-  font-family:'IBM Plex Mono',monospace;
-}
-.nav-links a:hover,.nav-links a:focus-visible{color:var(--gold-bright)}
-.nav-links a.lang{border-left:1px solid rgba(217,169,63,.35);padding-left:22px;color:var(--gold-bright)}
-a:focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px}
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.nav-inner{max-width:960px;margin:0 auto;padding:16px 24px;display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.nav-brand{color:var(--ink);text-decoration:none;font-weight:700;font-size:1.05rem}
+.nav-brand span{font-weight:400}
+.nav-links{display:flex;gap:22px;flex-wrap:wrap}
+.nav-links a{color:var(--soft);text-decoration:none;font-size:.95rem}
+.nav-links a:hover{text-decoration:underline}
+.nav-links a.current{font-weight:700;color:var(--ink)}
+.nav-links a.lang{border-left:1px solid #ccc;padding-left:20px}
 
-/* ---------- Hero ---------- */
-header{
-  background:var(--ink);color:#EDEBE4;position:relative;overflow:hidden;
-}
-.hero-inner{
-  max-width:1080px;margin:0 auto;padding:104px 24px 120px;position:relative;z-index:2;
-}
-.eyebrow{
-  font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--gold-bright);margin-bottom:26px;
-}
-h1{
-  font-family:'Shippori Mincho',serif;font-weight:600;
-  font-size:clamp(2.1rem,5vw,3.3rem);line-height:1.28;max-width:21ch;
-}
-.hero-sub{
-  margin-top:28px;max-width:58ch;color:#B8BAC2;font-size:1.06rem;
-}
-.hero-sub strong{color:#EDEBE4;font-weight:500}
-.hero-cta{margin-top:40px;display:flex;gap:16px;flex-wrap:wrap}
-.btn{
-  display:inline-block;text-decoration:none;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;
-  font-family:'IBM Plex Mono',monospace;padding:13px 24px;border:1px solid var(--gold-bright);
-  transition:background .2s,color .2s;
-}
-.btn-gold{background:var(--gold-bright);color:var(--ink)}
-.btn-gold:hover{background:transparent;color:var(--gold-bright)}
-.btn-ghost{color:var(--gold-bright)}
-.btn-ghost:hover{background:var(--gold-bright);color:var(--ink)}
+/* top of page */
+header{background:#fff}
+.hero-inner,.head-inner{max-width:960px;margin:0 auto;padding:72px 24px 56px}
+.eyebrow{font-size:.9rem;color:var(--muted);margin-bottom:16px}
+h1{font-weight:700;font-size:clamp(1.9rem,4.2vw,2.7rem);line-height:1.3;max-width:24ch}
+.hero-sub,.head-sub{margin-top:20px;max-width:62ch;color:var(--soft);font-size:1.08rem}
+.hero-sub strong{font-weight:700;color:var(--ink)}
+.hero-cta{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-size:.95rem;padding:11px 22px;border:1px solid var(--ink);border-radius:3px}
+.btn-gold{background:var(--ink);color:#fff}
+.btn-gold:hover{background:#fff;color:var(--ink)}
+.btn-ghost{background:#fff;color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:#fff}
 
-/* kintsugi seam */
-.seam{position:absolute;inset:0;z-index:1;pointer-events:none}
-.seam path{
-  fill:none;stroke:url(#goldgrad);stroke-width:2.2;stroke-linecap:round;
-  stroke-dasharray:2400;stroke-dashoffset:2400;
-  animation:draw 2.8s ease-out .3s forwards;
-  opacity:.85;
-}
-.seam .branch{stroke-width:1.3;animation-delay:1.4s;animation-duration:1.8s}
-@keyframes draw{to{stroke-dashoffset:0}}
-@media (prefers-reduced-motion:reduce){
-  .seam path{animation:none;stroke-dashoffset:0}
-  html{scroll-behavior:auto}
-}
+/* status banner */
+.status{background:#f4f4f4;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.status-inner{max-width:960px;margin:0 auto;padding:16px 24px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.status-tag{font-weight:700;font-size:.9rem}
+.status-inner p{font-size:.98rem}
 
-/* ---------- Sections ---------- */
-section{max-width:1080px;margin:0 auto;padding:88px 24px}
-.section-label{
-  font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--gold);display:flex;align-items:center;gap:14px;margin-bottom:18px;
-}
-.section-label::before{content:"";width:34px;height:2px;background:var(--gold)}
-h2{
-  font-family:'Shippori Mincho',serif;font-weight:600;font-size:clamp(1.6rem,3.4vw,2.2rem);
-  line-height:1.3;margin-bottom:22px;max-width:30ch;
-}
-.lede{max-width:66ch;color:var(--ink-soft)}
+/* sections */
+section{max-width:960px;margin:0 auto;padding:56px 24px}
+.section-label{font-size:.85rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+h2{font-weight:700;font-size:clamp(1.4rem,3vw,1.8rem);line-height:1.35;margin-bottom:18px;max-width:32ch}
+.lede{max-width:66ch;color:var(--soft)}
+.divider{border:none;border-top:1px solid var(--line);max-width:960px;margin:0 auto}
 
-/* research grid */
-.research-grid{
-  margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;
-}
-.area{
-  background:var(--card);border:1px solid var(--line);padding:30px 28px 32px;position:relative;
-}
-.area::before{
-  content:"";position:absolute;top:0;left:0;width:44px;height:3px;background:var(--gold-bright);
-}
-.area h3{font-family:'Shippori Mincho',serif;font-weight:600;font-size:1.12rem;margin-bottom:12px;line-height:1.4}
-.area p{font-size:.94rem;color:var(--slate)}
-.divider{border:none;border-top:1px solid var(--line);max-width:1080px;margin:0 auto}
+/* cards */
+.research-grid,.people-grid,.join-wrap,.mentor-wrap{margin-top:32px;display:grid;gap:20px}
+.research-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.people-grid{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.join-wrap,.mentor-wrap{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.area,.join-card,.mentor-card,.person{background:#fff;border:1px solid var(--line)}
+.area,.join-card,.mentor-card{padding:24px}
+.area h3,.join-card h3,.mentor-card h3,.person h3{font-size:1.05rem;font-weight:700;margin-bottom:10px;line-height:1.4}
+.area p,.join-card p,.join-card li,.mentor-card li,.person p{font-size:.95rem;color:var(--soft)}
+.join-card ul,.mentor-card ul{padding-left:20px;margin-top:8px;display:grid;gap:6px}
 
 /* people */
-.people-grid{margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
-.person{background:var(--card);border:1px solid var(--line)}
-.person .photo{
-  aspect-ratio:1/1;background:linear-gradient(135deg,#E7E5DD 0%,#D8D6CD 100%);
-  display:flex;align-items:center;justify-content:center;
-  font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.1em;color:#9A988F;text-transform:uppercase;
-  overflow:hidden;
-}
-.person .photo img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92)}
-.person .info{padding:20px 22px 24px}
-.person h3{font-family:'Shippori Mincho',serif;font-size:1.05rem;font-weight:600}
-.person .role{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin:6px 0 10px}
-.person p{font-size:.9rem;color:var(--slate)}
+.person .photo{aspect-ratio:1/1;background:#eee;display:flex;align-items:center;justify-content:center;font-size:.8rem;color:#888;overflow:hidden}
+.person .photo img{width:100%;height:100%;object-fit:cover;display:block}
+.person .info{padding:16px 18px 20px}
+.person h3{margin-bottom:2px}
+.person .role{font-size:.85rem;color:var(--muted);margin:0 0 8px}
 
 /* publications */
-.pub-list{margin-top:44px;border-top:1px solid var(--line)}
-.pub{
-  display:grid;grid-template-columns:86px 1fr;gap:24px;padding:24px 4px;border-bottom:1px solid var(--line);
-}
-.pub .year{font-family:'IBM Plex Mono',monospace;font-size:.85rem;color:var(--gold);padding-top:3px}
-.pub .cite{font-size:.96rem;color:var(--ink-soft)}
-.pub .cite em{font-style:italic}
-.pub .cite .doi{font-size:.82rem;color:var(--slate)}
-.pub-more{margin-top:26px;font-size:.94rem;color:var(--slate)}
-.pub-more a{color:var(--gold)}
-@media(max-width:560px){.pub{grid-template-columns:1fr;gap:6px}}
+.pub-list{margin-top:28px;border-top:1px solid var(--line)}
+.pub{display:grid;grid-template-columns:70px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
+.pub .year{color:var(--muted);font-size:.95rem}
+.pub .cite{font-size:.95rem;color:var(--soft)}
+.pub .cite .doi{font-size:.85rem;color:var(--muted)}
+.pub-more{margin-top:20px;font-size:.95rem;color:var(--muted)}
+@media(max-width:560px){.pub{grid-template-columns:1fr;gap:4px}}
 
-/* join */
-.join-wrap{
-  margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;
-}
-.join-card{background:var(--card);border:1px solid var(--line);padding:30px 28px}
-.join-card h3{font-family:'Shippori Mincho',serif;font-size:1.1rem;font-weight:600;margin-bottom:12px}
-.join-card p,.join-card li{font-size:.94rem;color:var(--slate)}
-.join-card ul{padding-left:20px;margin-top:8px}
-.join-card a{color:var(--gold);text-decoration-color:rgba(185,138,46,.4)}
+/* prospective students */
+.fit-list{margin-top:32px;display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.fit{background:#fff;padding:22px 24px}
+.fit h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
+.fit p{font-size:.95rem;color:var(--soft);max-width:70ch}
 
 /* footer */
-footer{background:var(--ink);color:#B8BAC2;margin-top:40px}
-.footer-inner{
-  max-width:1080px;margin:0 auto;padding:56px 24px;display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;
-}
-.footer-inner h4{font-family:'Shippori Mincho',serif;color:#EDEBE4;font-weight:600;margin-bottom:10px}
+footer{border-top:1px solid var(--line);margin-top:24px;color:var(--muted)}
+.footer-inner{max-width:960px;margin:0 auto;padding:36px 24px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.footer-inner h4{color:var(--ink);font-weight:700;margin-bottom:8px}
 .footer-inner p{font-size:.9rem}
-.footer-inner a{color:var(--gold-bright);text-decoration:none}
-.fineprint{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;color:#7B7F8A;align-self:flex-end}
+.footer-inner a{color:var(--link)}
+.fineprint{font-size:.8rem;align-self:flex-end}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .status{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .pstatus{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .pstatus{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .pstatus{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .pstatus{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.intro{display:grid;grid-template-columns:180px 1fr;gap:32px;align-items:start;padding-top:64px;padding-bottom:72px}
+.intro img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.intro h2{font-size:1.3rem;margin-bottom:14px;max-width:none}
+.intro p{color:var(--soft);max-width:64ch;margin-bottom:14px}
+@media(max-width:600px){.intro{grid-template-columns:1fr}.intro img{max-width:180px}}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .pstatus{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.intro{display:grid;grid-template-columns:180px 1fr;gap:32px;align-items:start;padding-top:64px;padding-bottom:72px}
+.intro img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.intro h2{font-size:1.3rem;margin-bottom:14px;max-width:none}
+.intro p{color:var(--soft);max-width:64ch;margin-bottom:14px}
+@media(max-width:600px){.intro{grid-template-columns:1fr}.intro img{max-width:180px}}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .pstatus{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.intro{display:grid;grid-template-columns:180px 1fr;gap:32px;align-items:start;padding-top:64px;padding-bottom:72px}
+.intro img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.intro h2{font-size:1.3rem;margin-bottom:14px;max-width:none}
+.intro p{color:var(--soft);max-width:64ch;margin-bottom:14px}
+@media(max-width:600px){.intro{grid-template-columns:1fr}.intro img{max-width:180px}}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .pstatus{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.intro{display:grid;grid-template-columns:180px 1fr;gap:32px;align-items:start;padding-top:64px;padding-bottom:72px}
+.intro img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.intro h2{font-size:1.3rem;margin-bottom:14px;max-width:none}
+.intro p{color:var(--soft);max-width:64ch;margin-bottom:14px}
+@media(max-width:600px){.intro{grid-template-columns:1fr}.intro img{max-width:180px}}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .pstatus{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.intro{display:grid;grid-template-columns:180px 1fr;gap:32px;align-items:start;padding-top:64px;padding-bottom:72px}
+.intro img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.intro h2{font-size:1.3rem;margin-bottom:14px;max-width:none}
+.intro p{color:var(--soft);max-width:64ch;margin-bottom:14px}
+@media(max-width:600px){.intro{grid-template-columns:1fr}.intro img{max-width:180px}}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .pstatus{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.intro{display:grid;grid-template-columns:180px 1fr;gap:32px;align-items:start;padding-top:64px;padding-bottom:72px}
+.intro img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.intro h2{font-size:1.3rem;margin-bottom:14px;max-width:none}
+.intro p{color:var(--soft);max-width:64ch;margin-bottom:14px}
+@media(max-width:600px){.intro{grid-template-columns:1fr}.intro img{max-width:180px}}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .pstatus{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.intro{display:grid;grid-template-columns:180px 1fr;gap:32px;align-items:start;padding-top:64px;padding-bottom:72px}
+.intro img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.intro h2{font-size:1.3rem;margin-bottom:14px;max-width:none}
+.intro p{color:var(--soft);max-width:64ch;margin-bottom:14px}
+@media(max-width:600px){.intro{grid-template-columns:1fr}.intro img{max-width:180px}}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .pstatus{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.intro{display:grid;grid-template-columns:180px 1fr;gap:32px;align-items:start;padding-top:64px;padding-bottom:72px}
+.intro img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.intro h2{font-size:1.3rem;margin-bottom:14px;max-width:none}
+.intro p{color:var(--soft);max-width:64ch;margin-bottom:14px}
+@media(max-width:600px){.intro{grid-template-columns:1fr}.intro img{max-width:180px}}
+@media(max-width:600px){nav{position:static}.nav-links a.lang{border-left:none;padding-left:0}}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="nav-inner">
-    <a class="nav-brand" href="#top">Shigemoto <span>Lab</span></a>
+    <a class="nav-brand" href="index.html">Shigemoto <span>Lab</span></a>
     <div class="nav-links">
-      <a href="#research">Research</a>
-      <a href="#people">People</a>
-      <a href="#publications">Publications</a>
-      <a href="#join">Join Us</a>
+      <a href="research.html">Research</a>
+      <a href="people.html">People</a>
+      <a href="publications.html">Publications</a>
+      <a href="prospective-students.html">Join Us</a>
       <a class="lang" href="ja/index.html" lang="ja" hreflang="ja">日本語</a>
     </div>
   </div>
 </nav>
 
-<header id="top">
-  <svg class="seam" viewBox="0 0 1200 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <defs>
-      <linearGradient id="goldgrad" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#8F6A1F"/>
-        <stop offset="45%" stop-color="#D9A93F"/>
-        <stop offset="100%" stop-color="#F0CE7A"/>
-      </linearGradient>
-    </defs>
-    <path d="M 1200 40 C 1050 120, 980 90, 900 180 C 830 260, 870 320, 780 380 C 700 435, 720 500, 640 560"/>
-    <path class="branch" d="M 890 190 C 940 240, 1010 250, 1080 235"/>
-    <path class="branch" d="M 775 385 C 730 430, 660 445, 600 430"/>
-  </svg>
-  <div class="hero-inner">
-    <p class="eyebrow">University of Florida · Counseling Psychology</p>
-    <h1>Resilience lives in people, and in the communities around them.</h1>
-    <p class="hero-sub">We study how <strong>individuals and communities</strong> withstand, recover, and grow in the face of adversity. Our work spans personal trauma and community-wide disaster.</p>
-    <div class="hero-cta">
-      <a class="btn btn-gold" href="#join">Prospective Students</a>
-      <a class="btn btn-ghost" href="#research">Our Research</a>
-    </div>
-  </div>
-</header>
-
-<section id="research">
-  <p class="section-label">Research</p>
-  <h2>Resilience at two levels, and the growth between them</h2>
-  <p class="lede">Recovery after adversity is never only an individual story or only a community story. Our research examines resilience at both levels: how people intentionally grow, and how the places they live shape that growth. Posttraumatic growth (PTG) serves as a central outcome connecting the two.</p>
-  <div class="research-grid">
-    <article class="area">
-      <h3>Individual resilience &amp; growth</h3>
-      <p>How people adapt and intentionally grow after trauma and adversity, including personal growth initiative (PGI), meaning-making, rumination, and coping. We also ask when reported posttraumatic growth reflects genuine change.</p>
-    </article>
-    <article class="area">
-      <h3>Community resilience</h3>
-      <p>How community resources, social cohesion, and place shape recovery after hurricanes, wildfires, and public health crises. We ask why some communities fare better than their circumstances predict.</p>
-    </article>
-    <article class="area">
-      <h3>Methods and measurement</h3>
-      <p>Rigorous methods to connect the two levels, including structural equation modeling, latent growth and mixture modeling, multilevel modeling, and intensive longitudinal (daily diary) designs.</p>
-    </article>
-  </div>
-</section>
-
-<hr class="divider">
-
-<section id="people">
-  <p class="section-label">People</p>
-  <h2>Who we are</h2>
-  <div class="people-grid">
-    <article class="person">
-      <div class="photo"><img src="assets/yuki.jpg" alt="Yuki Shigemoto"></div>
-      <div class="info">
-        <h3>Yuki Shigemoto, Ph.D.</h3>
-        <p class="role">Principal Investigator</p>
-        <p>Assistant Professor of Counseling Psychology, University of Florida. Ph.D., Texas Tech University. Research on individual and community resilience, posttraumatic growth, and quantitative methods.</p>
-      </div>
-    </article>
-    <article class="person">
-      <div class="photo">Photo</div>
-      <div class="info">
-        <h3>William Giniewski</h3>
-        <p class="role">Doctoral Student</p>
-        <p>Second-year doctoral student in Counseling Psychology. Research on disaster preparedness and resource loss; master's thesis develops the Inland Hurricane Preparedness Scale.</p>
-      </div>
-    </article>
-    <article class="person">
-      <div class="photo">Photo</div>
-      <div class="info">
-        <h3>Meagan Sullivan</h3>
-        <p class="role">Doctoral Student</p>
-        <p>Second-year doctoral student in Counseling Psychology.</p>
-      </div>
-    </article>
-    <article class="person">
-      <div class="photo">Photo</div>
-      <div class="info">
-        <h3>Katherine Landis</h3>
-        <p class="role">Undergraduate Research Assistant</p>
-        <p>Undergraduate research assistant. Presented research on community resilience, resource loss, and wellbeing following the 2025 California wildfires.</p>
-      </div>
-    </article>
-  </div>
-</section>
-
-<hr class="divider">
-
-<section id="publications">
-  <p class="section-label">Publications</p>
-  <h2>Selected publications</h2>
-  <div class="pub-list">
-    <div class="pub">
-      <span class="year">2026</span>
-      <p class="cite">Shigemoto, Y. (2026). Influence of geographical residence on perceived community resilience: Comparison between people of color and White individuals following Hurricane Harvey. <em>Journal of Health Equity, 3</em>(1), 2606721. <span class="doi">doi: 10.1080/29944694.2025.2606721</span></p>
-    </div>
-    <div class="pub">
-      <span class="year">2025</span>
-      <p class="cite">Shigemoto, Y., &amp; Giniewski, W. (2025). Exploring patterns of short- and mid-term essential resource loss following Hurricane Ike: A mixture modeling approach. <em>Progress in Disaster Science, 28</em>, 100481. <span class="doi">doi: 10.1016/j.pdisas.2025.100481</span></p>
-    </div>
-    <div class="pub">
-      <span class="year">2025</span>
-      <p class="cite">Shigemoto, Y. (2025). The role of personal growth initiative in predicting changes in perceived community resilience during the COVID-19 pandemic: A three-year longitudinal study. <em>Journal of Community &amp; Applied Social Psychology, 35</em>(6), e70179. <span class="doi">doi: 10.1002/casp.70179</span></p>
-    </div>
-    <div class="pub">
-      <span class="year">2025</span>
-      <p class="cite">Shigemoto, Y., &amp; Bhattarai, M. (2025). Longitudinal association between event-related rumination and posttraumatic growth: Latent growth curve mediation model. <em>Stress and Health, 41</em>(4), e70067. <span class="doi">doi: 10.1002/smi.70067</span></p>
-    </div>
-    <div class="pub">
-      <span class="year">2025</span>
-      <p class="cite">Shigemoto, Y., White, A., &amp; Baloch, R. (2025). Effect of engagement in personal growth initiative skills on depression, anxiety, and stress: Multilevel mediation analysis with intensive longitudinal data. <em>Journal of Clinical Psychology, 81</em>, 7-18. <span class="doi">doi: 10.1002/jclp.23749</span></p>
-    </div>
-    <div class="pub">
-      <span class="year">2022</span>
-      <p class="cite">Shigemoto, Y. (2022). Association between daily rumination and posttraumatic growth during the COVID-19 pandemic: An experience sampling method. <em>Psychological Trauma: Theory, Research, Practice, and Policy, 14</em>(2), 229–236. <span class="doi">doi: 10.1037/tra0001061</span></p>
-    </div>
-    <div class="pub">
-      <span class="year">2021</span>
-      <p class="cite">Shigemoto, Y. (2021). Influence of community-level factors on relation between community resilience and posttraumatic growth. <em>Traumatology, 27</em>(3), 326–332. <span class="doi">doi: 10.1037/trm0000285</span></p>
-    </div>
-    <div class="pub">
-      <span class="year">2020</span>
-      <p class="cite">Shigemoto, Y., &amp; Kawachi, I. (2020). Social cohesion and quality of life among survivors of a natural disaster. <em>Quality of Life Research, 29</em>, 3191-3200. <span class="doi">doi: 10.1007/s11136-020-02590-7</span></p>
-    </div>
-  </div>
-  <p class="pub-more">For a complete list of 35+ peer-reviewed publications, see <a href="https://scholar.google.com/citations?user=dNQknAkAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a> or <a href="https://www.researchgate.net/profile/Yuki-Shigemoto" target="_blank" rel="noopener">ResearchGate</a>.</p>
-</section>
-
-<hr class="divider">
-
-<section id="join">
-  <p class="section-label">Join Us</p>
-  <h2>Prospective students &amp; collaborators</h2>
-  <div class="join-wrap">
-    <div class="join-card">
-      <h3>Doctoral students</h3>
-      <p>Dr. Shigemoto is currently accepting doctoral students each year through the APA-accredited Counseling Psychology Ph.D. program at the University of Florida.</p>
-      <ul>
-        <li>Strong fit: interests in resilience, trauma and growth, disaster mental health, or quantitative methods</li>
-        <li>Apply via the <a href="https://psych.ufl.edu/counseling-psychology/about/" target="_blank" rel="noopener">UF Counseling Psychology program</a></li>
-        <li>Questions before applying are welcome. Email with your CV and research interests</li>
-        <li><a href="prospective-students.html">Read the full guide for prospective students</a></li>
-      </ul>
-    </div>
-    <div class="join-card">
-      <h3>Undergraduate research assistants</h3>
-      <p>UF undergraduates interested in gaining research experience in resilience and trauma research are welcome to reach out with a CV and a brief statement of interest.</p>
-    </div>
+<section class="intro">
+  <img src="assets/yuki.jpg" alt="Yuki Shigemoto">
+  <div>
+    <h2>Welcome to the Shigemoto Lab!</h2>
+    <p>My name is Yuki Shigemoto (he/him/his), and I am an Assistant Professor of Counseling Psychology in the Department of Psychology at the University of Florida. I earned my Ph.D. in Counseling Psychology from Texas Tech University.</p>
+    <p>My research focuses on how individuals and communities recover and grow after adversity, such as disasters, trauma, and public health crises. In particular, my lab studies how people grow after adversity, who has resources and who loses them, and how communities recover and grow together.</p>
+    <p><a href="research.html">Learn more about our research →</a></p>
   </div>
 </section>
 

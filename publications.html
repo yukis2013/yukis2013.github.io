@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications · Shigemoto Lab · University of Florida</title>
+<meta name="description" content="Journal articles, book chapters, and conference presentations from the Shigemoto Lab.">
+<link rel="alternate" hreflang="en" href="https://shigemotolab.com/publications.html">
+<link rel="alternate" hreflang="ja" href="https://shigemotolab.com/ja/publications.html">
+<link rel="alternate" hreflang="x-default" href="https://shigemotolab.com/publications.html">
+<style>
+:root{--ink:#111;--soft:#333;--muted:#555;--line:#ddd;--link:#1a4fa0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;
+  background:#fff;color:var(--ink);line-height:1.7;font-size:17px;
+}
+a{color:var(--link)}
+a:hover{color:#0f3270}
+a:focus-visible{outline:2px solid var(--link);outline-offset:3px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.nav-inner{max-width:960px;margin:0 auto;padding:16px 24px;display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.nav-brand{color:var(--ink);text-decoration:none;font-weight:700;font-size:1.05rem}
+.nav-brand span{font-weight:400}
+.nav-links{display:flex;gap:22px;flex-wrap:wrap}
+.nav-links a{color:var(--soft);text-decoration:none;font-size:.95rem}
+.nav-links a:hover{text-decoration:underline}
+.nav-links a.current{font-weight:700;color:var(--ink)}
+.nav-links a.lang{border-left:1px solid #ccc;padding-left:20px}
+
+/* top of page */
+header{background:#fff}
+.hero-inner,.head-inner{max-width:960px;margin:0 auto;padding:72px 24px 56px}
+.eyebrow{font-size:.9rem;color:var(--muted);margin-bottom:16px}
+h1{font-weight:700;font-size:clamp(1.9rem,4.2vw,2.7rem);line-height:1.3;max-width:24ch}
+.hero-sub,.head-sub{margin-top:20px;max-width:62ch;color:var(--soft);font-size:1.08rem}
+.hero-sub strong{font-weight:700;color:var(--ink)}
+.hero-cta{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-size:.95rem;padding:11px 22px;border:1px solid var(--ink);border-radius:3px}
+.btn-gold{background:var(--ink);color:#fff}
+.btn-gold:hover{background:#fff;color:var(--ink)}
+.btn-ghost{background:#fff;color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+
+/* status banner */
+.status{background:#f4f4f4;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.status-inner{max-width:960px;margin:0 auto;padding:16px 24px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.status-tag{font-weight:700;font-size:.9rem}
+.status-inner p{font-size:.98rem}
+
+/* sections */
+section{max-width:960px;margin:0 auto;padding:56px 24px}
+.section-label{font-size:.85rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+h2{font-weight:700;font-size:clamp(1.4rem,3vw,1.8rem);line-height:1.35;margin-bottom:18px;max-width:32ch}
+.lede{max-width:66ch;color:var(--soft)}
+.divider{border:none;border-top:1px solid var(--line);max-width:960px;margin:0 auto}
+
+/* cards */
+.research-grid,.people-grid,.join-wrap,.mentor-wrap{margin-top:32px;display:grid;gap:20px}
+.research-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.people-grid{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.join-wrap,.mentor-wrap{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.area,.join-card,.mentor-card,.person{background:#fff;border:1px solid var(--line)}
+.area,.join-card,.mentor-card{padding:24px}
+.area h3,.join-card h3,.mentor-card h3,.person h3{font-size:1.05rem;font-weight:700;margin-bottom:10px;line-height:1.4}
+.area p,.join-card p,.join-card li,.mentor-card li,.person p{font-size:.95rem;color:var(--soft)}
+.join-card ul,.mentor-card ul{padding-left:20px;margin-top:8px;display:grid;gap:6px}
+
+/* people */
+.person .photo{aspect-ratio:1/1;background:#eee;display:flex;align-items:center;justify-content:center;font-size:.8rem;color:#888;overflow:hidden}
+.person .photo img{width:100%;height:100%;object-fit:cover;display:block}
+.person .info{padding:16px 18px 20px}
+.person h3{margin-bottom:2px}
+.person .role{font-size:.85rem;color:var(--muted);margin:0 0 8px}
+
+/* publications */
+.pub-list{margin-top:28px;border-top:1px solid var(--line)}
+.pub{display:grid;grid-template-columns:70px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
+.pub .year{color:var(--muted);font-size:.95rem}
+.pub .cite{font-size:.95rem;color:var(--soft)}
+.pub .cite .doi{font-size:.85rem;color:var(--muted)}
+.pub-more{margin-top:20px;font-size:.95rem;color:var(--muted)}
+@media(max-width:560px){.pub{grid-template-columns:1fr;gap:4px}}
+
+/* prospective students */
+.fit-list{margin-top:32px;display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.fit{background:#fff;padding:22px 24px}
+.fit h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
+.fit p{font-size:.95rem;color:var(--soft);max-width:70ch}
+
+/* footer */
+footer{border-top:1px solid var(--line);margin-top:24px;color:var(--muted)}
+.footer-inner{max-width:960px;margin:0 auto;padding:36px 24px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.footer-inner h4{color:var(--ink);font-weight:700;margin-bottom:8px}
+.footer-inner p{font-size:.9rem}
+.footer-inner a{color:var(--link)}
+.fineprint{font-size:.8rem;align-self:flex-end}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .status{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .pstatus{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .pstatus{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .pstatus{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .pstatus{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.intro{display:grid;grid-template-columns:180px 1fr;gap:32px;align-items:start;padding-top:64px;padding-bottom:72px}
+.intro img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.intro h2{font-size:1.3rem;margin-bottom:14px;max-width:none}
+.intro p{color:var(--soft);max-width:64ch;margin-bottom:14px}
+@media(max-width:600px){.intro{grid-template-columns:1fr}.intro img{max-width:180px}}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .pstatus{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.intro{display:grid;grid-template-columns:180px 1fr;gap:32px;align-items:start;padding-top:64px;padding-bottom:72px}
+.intro img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.intro h2{font-size:1.3rem;margin-bottom:14px;max-width:none}
+.intro p{color:var(--soft);max-width:64ch;margin-bottom:14px}
+@media(max-width:600px){.intro{grid-template-columns:1fr}.intro img{max-width:180px}}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .pstatus{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.intro{display:grid;grid-template-columns:180px 1fr;gap:32px;align-items:start;padding-top:64px;padding-bottom:72px}
+.intro img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.intro h2{font-size:1.3rem;margin-bottom:14px;max-width:none}
+.intro p{color:var(--soft);max-width:64ch;margin-bottom:14px}
+@media(max-width:600px){.intro{grid-template-columns:1fr}.intro img{max-width:180px}}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .pstatus{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.intro{display:grid;grid-template-columns:180px 1fr;gap:32px;align-items:start;padding-top:64px;padding-bottom:72px}
+.intro img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.intro h2{font-size:1.3rem;margin-bottom:14px;max-width:none}
+.intro p{color:var(--soft);max-width:64ch;margin-bottom:14px}
+@media(max-width:600px){.intro{grid-template-columns:1fr}.intro img{max-width:180px}}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .pstatus{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.intro{display:grid;grid-template-columns:180px 1fr;gap:32px;align-items:start;padding-top:64px;padding-bottom:72px}
+.intro img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.intro h2{font-size:1.3rem;margin-bottom:14px;max-width:none}
+.intro p{color:var(--soft);max-width:64ch;margin-bottom:14px}
+@media(max-width:600px){.intro{grid-template-columns:1fr}.intro img{max-width:180px}}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .pstatus{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.intro{display:grid;grid-template-columns:180px 1fr;gap:32px;align-items:start;padding-top:64px;padding-bottom:72px}
+.intro img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.intro h2{font-size:1.3rem;margin-bottom:14px;max-width:none}
+.intro p{color:var(--soft);max-width:64ch;margin-bottom:14px}
+@media(max-width:600px){.intro{grid-template-columns:1fr}.intro img{max-width:180px}}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .pstatus{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.intro{display:grid;grid-template-columns:180px 1fr;gap:32px;align-items:start;padding-top:64px;padding-bottom:72px}
+.intro img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.intro h2{font-size:1.3rem;margin-bottom:14px;max-width:none}
+.intro p{color:var(--soft);max-width:64ch;margin-bottom:14px}
+@media(max-width:600px){.intro{grid-template-columns:1fr}.intro img{max-width:180px}}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
+
+.research-list{margin-top:28px;display:grid;gap:36px}
+.theme h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.theme p{max-width:70ch;color:var(--soft)}
+.theme .papers-label{margin-top:14px;font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.theme ul,.proj-list{padding-left:20px;margin-top:6px;display:grid;gap:8px}
+.theme li{font-size:.92rem;color:var(--soft)}
+.summary-list{margin-top:24px;display:grid;gap:14px;max-width:70ch;padding-left:20px}
+.summary-list li{color:var(--soft)}
+.more{margin-top:24px}
+.proj{margin-top:20px;max-width:70ch}
+.proj h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.proj .pstatus{font-weight:400;color:var(--muted);font-size:.9rem}
+.proj p{color:var(--soft)}
+.pi{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-top:28px;align-items:start}
+.pi img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.pi h3{font-size:1.25rem;font-weight:700}
+.pi .role{color:var(--muted);margin:2px 0 10px}
+.pi p{color:var(--soft);max-width:62ch}
+@media(max-width:600px){.pi{grid-template-columns:1fr}.pi img{max-width:220px}}
+.member-list{margin-top:20px;border-top:1px solid var(--line)}
+.member{padding:16px 0;border-bottom:1px solid var(--line)}
+.member h4{font-size:1.02rem;font-weight:700}
+.member p{font-size:.93rem;color:var(--soft)}
+.member .role{color:var(--muted);font-size:.88rem}
+.group-h{margin-top:44px;font-size:1.15rem;font-weight:700}
+.pub-year{margin-top:32px;font-size:1.05rem;font-weight:700}
+.pub-list2{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.pub-list2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;color:var(--soft)}
+.pub-list2 a{word-break:break-all}
+.intro{display:grid;grid-template-columns:180px 1fr;gap:32px;align-items:start;padding-top:64px;padding-bottom:72px}
+.intro img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.intro h2{font-size:1.3rem;margin-bottom:14px;max-width:none}
+.intro p{color:var(--soft);max-width:64ch;margin-bottom:14px}
+@media(max-width:600px){.intro{grid-template-columns:1fr}.intro img{max-width:180px}}
+@media(max-width:600px){nav{position:static}.nav-links a.lang{border-left:none;padding-left:0}}
+.note{margin-top:12px;font-size:.88rem;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">Shigemoto <span>Lab</span></a>
+    <div class="nav-links">
+      <a href="research.html">Research</a>
+      <a href="people.html">People</a>
+      <a class="current" href="publications.html">Publications</a>
+      <a href="prospective-students.html">Join Us</a>
+      <a class="lang" href="ja/publications.html" lang="ja" hreflang="ja">日本語</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="head-inner">
+    <p class="eyebrow">Shigemoto Lab</p>
+    <h1>Publications</h1>
+    <p class="head-sub">Journal articles, book chapters, and conference presentations. Also see <a href="https://scholar.google.com/citations?user=dNQknAkAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a> and <a href="https://www.researchgate.net/profile/Yuki-Shigemoto" target="_blank" rel="noopener">ResearchGate</a>.</p>
+  </div>
+</header>
+
+<hr class="divider">
+
+<section>
+  <h2>Journal articles</h2>
+  <p class="note">* Graduate student mentee</p>
+  <h3 class="pub-year">2026</h3>
+  <ul class="pub-list2">
+    <li><strong>Shigemoto, Y.</strong>, Huang, Y., &amp; Bhattarai, M. (2026). Multidimensional resource disparities by race during COVID-19: The role of chronic illness, disability, and mental health. <em>Race and Social Problems, 18</em>(4), 55. <a href="https://doi.org/10.1007/s12552-026-09525-w" target="_blank" rel="noopener">https://doi.org/10.1007/s12552-026-09525-w</a></li>
+    <li>Bhattarai, M., <strong>Shigemoto, Y.</strong>, &amp; Bajracharya, S. (2026). Positive psychology interventions for adults with spinal cord injury: A systematic review and meta-analysis. <em>Archives of Physical Medicine and Rehabilitation</em>. Advance online publication. <a href="https://doi.org/10.1016/j.apmr.2026.07.018" target="_blank" rel="noopener">https://doi.org/10.1016/j.apmr.2026.07.018</a></li>
+    <li><strong>Shigemoto, Y.</strong>, &amp; Kim, S. Y. (2026). Role of interconnected resources in chronic pain among people of color: A psychological network analysis approach. <em>Psychology, Health &amp; Medicine</em>. Advance online publication. <a href="https://doi.org/10.1080/13548506.2026.2680327" target="_blank" rel="noopener">https://doi.org/10.1080/13548506.2026.2680327</a></li>
+    <li><strong>Shigemoto, Y.</strong> (2026). Influence of geographical residence on perceived community resilience: Comparison between people of color and White individuals following Hurricane Harvey. <em>Journal of Health Equity, 3</em>(1), 2606721. <a href="https://doi.org/10.1080/29944694.2025.2606721" target="_blank" rel="noopener">https://doi.org/10.1080/29944694.2025.2606721</a></li>
+    <li>Bhattarai, M., Spears, B. A., <strong>Shigemoto, Y.</strong>, &amp; Li, Y. (2026). Thriving beyond the pandemic: Exploring post-traumatic growth in college students with and without disabilities. <em>Journal of American College Health, 74</em>(5). <a href="https://doi.org/10.1080/07448481.2025.2574929" target="_blank" rel="noopener">https://doi.org/10.1080/07448481.2025.2574929</a></li>
+  </ul>
+  <h3 class="pub-year">2025</h3>
+  <ul class="pub-list2">
+    <li>Bhattarai, M., <strong>Shigemoto, Y.</strong>, Huang, Y., Islam, M. T., &amp; Sorenson, M. (2025). Mindfulness for health and wellbeing in adults with spinal cord injury: A scoping review. <em>The Journal of Spinal Cord Medicine, 48</em>(6), 1085–1099. <a href="https://doi.org/10.1080/10790268.2024.2374130" target="_blank" rel="noopener">https://doi.org/10.1080/10790268.2024.2374130</a></li>
+    <li><strong>Shigemoto, Y.</strong>, &amp; Giniewski, W.* (2025). Exploring patterns of short- and mid-term essential resource loss following Hurricane Ike: A mixture modeling approach. <em>Progress in Disaster Science, 28</em>, 100481. <a href="https://doi.org/10.1016/j.pdisas.2025.100481" target="_blank" rel="noopener">https://doi.org/10.1016/j.pdisas.2025.100481</a></li>
+    <li><strong>Shigemoto, Y.</strong> (2025). The role of personal growth initiative in predicting changes in perceived community resilience during the COVID-19 pandemic: A three-year longitudinal study. <em>Journal of Community &amp; Applied Social Psychology, 35</em>(6), e70179. <a href="https://doi.org/10.1002/casp.70179" target="_blank" rel="noopener">https://doi.org/10.1002/casp.70179</a></li>
+    <li><strong>Shigemoto, Y.</strong>, &amp; Bhattarai, M. (2025). Longitudinal association between event-related rumination and posttraumatic growth: Latent growth curve mediation model. <em>Stress and Health, 41</em>(4), e70067. <a href="https://doi.org/10.1002/smi.70067" target="_blank" rel="noopener">https://doi.org/10.1002/smi.70067</a></li>
+    <li>Kim, S. Y., <strong>Shigemoto, Y.</strong>, Wong, P., &amp; Dhar, J. (2025). Pathways to growth in chronic pain: Understanding mechanisms of posttraumatic growth in racial minorities. <em>The Journal of Pain, 30</em>, 105381. <a href="https://doi.org/10.1016/j.jpain.2025.105381" target="_blank" rel="noopener">https://doi.org/10.1016/j.jpain.2025.105381</a></li>
+    <li>Kim, S. Y., Nguyen, N., <strong>Shigemoto, Y.</strong>, Yoo, H., &amp; Singh, S. (2025). Can social pain be medicated away? How everyday discrimination exacerbates the risk of opioid abuse among racial and ethnic minority people with chronic pain. <em>Health Psychology and Behavioral Medicine, 13</em>, 2454701. <a href="https://doi.org/10.1080/21642850.2025.2454701" target="_blank" rel="noopener">https://doi.org/10.1080/21642850.2025.2454701</a></li>
+    <li>Banks, A.*, &amp; <strong>Shigemoto, Y.</strong> (2025). Assessing parentification within a predominately African American emerging adult sample: An exploratory factor analysis of the Parentification Questionnaire (Session &amp; Jurvokic, 1986). <em>The American Journal of Family Therapy, 53</em>(4), 410–425. <a href="https://doi.org/10.1080/01926187.2025.2449959" target="_blank" rel="noopener">https://doi.org/10.1080/01926187.2025.2449959</a></li>
+    <li><strong>Shigemoto, Y.</strong>, White, A.*, &amp; Baloch, R.* (2025). Effect of engagement in personal growth initiative skills on depression, anxiety, and stress: Multilevel mediation analysis with intensive longitudinal data. <em>Journal of Clinical Psychology, 81</em>, 7–18. <a href="https://doi.org/10.1002/jclp.23749" target="_blank" rel="noopener">https://doi.org/10.1002/jclp.23749</a></li>
+    <li>Bhattarai, M., <strong>Shigemoto, Y.</strong>, &amp; Smedema, S. (2025). Role of self-efficacy on functional limitations among persons with spinal cord injury. <em>Chronic Illness, 21</em>(1), 94–104. <a href="https://doi.org/10.1177/17423953231203731" target="_blank" rel="noopener">https://doi.org/10.1177/17423953231203731</a></li>
+  </ul>
+  <h3 class="pub-year">2024</h3>
+  <ul class="pub-list2">
+    <li>Kim, S. Y., &amp; <strong>Shigemoto, Y.</strong> (2024). The Pain Injustice Experience Questionnaire: Measurement invariance across gender and racial/ethnic minority status. <em>Journal of Pain Research, 17</em>, 3087–3091. <a href="https://doi.org/10.2147/JPR.S475808" target="_blank" rel="noopener">https://doi.org/10.2147/JPR.S475808</a></li>
+    <li><strong>Shigemoto, Y.</strong>, &amp; White, A.* (2024). Influence of daily coping on psychological stress: A multilevel modeling approach. <em>Journal of Loss and Trauma, 29</em>(7), 844–859. <a href="https://doi.org/10.1080/15325024.2024.2352581" target="_blank" rel="noopener">https://doi.org/10.1080/15325024.2024.2352581</a></li>
+  </ul>
+  <h3 class="pub-year">2022</h3>
+  <ul class="pub-list2">
+    <li><strong>Shigemoto, Y.</strong> (2022). Association between daily rumination and posttraumatic growth during the COVID-19 pandemic: An experience sampling method. <em>Psychological Trauma: Theory, Research, Practice, and Policy, 14</em>(2), 229–236. <a href="https://doi.org/10.1037/tra0001061" target="_blank" rel="noopener">https://doi.org/10.1037/tra0001061</a></li>
+  </ul>
+  <h3 class="pub-year">2021</h3>
+  <ul class="pub-list2">
+    <li><strong>Shigemoto, Y.</strong> (2021). Influence of community-level factors on relation between community resilience and posttraumatic growth. <em>Traumatology, 27</em>(3), 326–332. <a href="https://doi.org/10.1037/trm0000285" target="_blank" rel="noopener">https://doi.org/10.1037/trm0000285</a></li>
+    <li>Kethineni, S., Frazier-Kouassi, S., <strong>Shigemoto, Y.</strong>, Jennings, W., Cardwell, S. M., Piquero, A. R., Gay, K., &amp; Sundaravadivelu, D. (2021). PROTOCOL: Effectiveness of parent-engagement programs to reduce truancy and juvenile delinquency: A systematic review. <em>Campbell Systematic Reviews, 17</em>(3), e1189. <a href="https://doi.org/10.1002/cl2.1189" target="_blank" rel="noopener">https://doi.org/10.1002/cl2.1189</a></li>
+    <li>Kim, S. Y., <strong>Shigemoto, Y.</strong>, Neduvelil, A., &amp; Grzywacz, J. (2021). Longitudinal stability of work-family enrichment over and above well-being and personality traits. <em>The Counseling Psychologist, 49</em>(6), 907–939. <a href="https://doi.org/10.1177/00110000211015909" target="_blank" rel="noopener">https://doi.org/10.1177/00110000211015909</a></li>
+    <li><strong>Shigemoto, Y.</strong> (2021). Exploring state-level variabilities between community resilience and posttraumatic stress symptoms during the COVID-19 pandemic: Multilevel modeling approach. <em>Traumatology, 27</em>, 98–106. <a href="https://doi.org/10.1037/trm0000303" target="_blank" rel="noopener">https://doi.org/10.1037/trm0000303</a></li>
+    <li><strong>Shigemoto, Y.</strong> (2021). Association between trajectories of personal growth initiative and posttraumatic stress after Hurricane Harvey: A latent growth mixture modeling approach. <em>Stress and Health, 37</em>, 285–296. <a href="https://doi.org/10.1002/smi.2995" target="_blank" rel="noopener">https://doi.org/10.1002/smi.2995</a></li>
+    <li><strong>Shigemoto, Y.</strong>, &amp; Robitschek, C. (2021). Coping flexibility and trauma appraisal predict patterns of posttraumatic stress and personal growth initiative in student trauma survivors. <em>International Journal of Stress Management, 28</em>, 11–23. <a href="https://doi.org/10.1037/str0000213" target="_blank" rel="noopener">https://doi.org/10.1037/str0000213</a></li>
+  </ul>
+  <h3 class="pub-year">2020</h3>
+  <ul class="pub-list2">
+    <li><strong>Shigemoto, Y.</strong>, &amp; Kawachi, I. (2020). Social cohesion and quality of life among survivors of a natural disaster. <em>Quality of Life Research, 29</em>, 3191–3200. <a href="https://doi.org/10.1007/s11136-020-02590-7" target="_blank" rel="noopener">https://doi.org/10.1007/s11136-020-02590-7</a></li>
+    <li><strong>Shigemoto, Y.</strong>, &amp; Robitschek, C. (2020). Personal growth initiative and posttraumatic stress among survivors of transportation accidents: Mixture modeling indicating changes in group membership over time. <em>Stress and Health, 36</em>, 365–375. <a href="https://doi.org/10.1002/smi.2935" target="_blank" rel="noopener">https://doi.org/10.1002/smi.2935</a></li>
+    <li><strong>Shigemoto, Y.</strong> (2020). Reciprocal influence between posttraumatic stress and posttraumatic growth approximately one year after Hurricane Harvey: A bivariate latent change score modeling approach. <em>Traumatology, 26</em>, 317–324. <a href="https://doi.org/10.1037/trm0000231" target="_blank" rel="noopener">https://doi.org/10.1037/trm0000231</a></li>
+    <li><strong>Shigemoto, Y.</strong>, Banks, A. N.*, &amp; Boxley, B.* (2020). Gender differences in the interaction effect of community resources and attitudes toward seeking professional help on posttraumatic stress, depression, and posttraumatic growth. <em>Journal of Community Psychology, 48</em>, 693–708. <a href="https://doi.org/10.1002/jcop.22287" target="_blank" rel="noopener">https://doi.org/10.1002/jcop.22287</a></li>
+  </ul>
+  <h3 class="pub-year">2019</h3>
+  <ul class="pub-list2">
+    <li><strong>Shigemoto, Y.</strong> (2019). Examining reciprocal influence between posttraumatic stress and depressive symptoms among natural disaster survivors. <em>Journal of Affective Disorders, 257</em>, 345–351. <a href="https://doi.org/10.1016/j.jad.2019.07.056" target="_blank" rel="noopener">https://doi.org/10.1016/j.jad.2019.07.056</a></li>
+    <li>Kim, S. Y., <strong>Shigemoto, Y.</strong>, &amp; Neduvelil, A. (2019). Survive or thrive? Longitudinal relation between chronic pain and well-being. <em>International Journal of Behavioral Medicine, 26</em>, 486–498. <a href="https://doi.org/10.1007/s12529-019-09805-3" target="_blank" rel="noopener">https://doi.org/10.1007/s12529-019-09805-3</a></li>
+    <li>Robitschek, C., Yang, A., Villalba, R., &amp; <strong>Shigemoto, Y.</strong> (2019). Personal growth initiative: A robust and malleable predictor of treatment outcome for depressed partial hospital patients. <em>Journal of Affective Disorders, 246</em>, 548–555. <a href="https://doi.org/10.1016/j.jad.2018.12.121" target="_blank" rel="noopener">https://doi.org/10.1016/j.jad.2018.12.121</a></li>
+  </ul>
+  <h3 class="pub-year">2018</h3>
+  <ul class="pub-list2">
+    <li><strong>Shigemoto, Y.</strong> (2018). Moderating effect of agreeableness on coping among cancer survivors: A longitudinal analysis. <em>Journal of Loss and Trauma, 23</em>, 588–599. <a href="https://doi.org/10.1080/15325024.2018.1498198" target="_blank" rel="noopener">https://doi.org/10.1080/15325024.2018.1498198</a></li>
+    <li><strong>Shigemoto, Y.</strong>, &amp; Robitschek, C. (2018). Exploring patterns of personal growth initiative and posttraumatic stress: A latent profile analysis. <em>Journal of American College Health, 66</em>, 350–359. <a href="https://doi.org/10.1080/07448481.2018.1431900" target="_blank" rel="noopener">https://doi.org/10.1080/07448481.2018.1431900</a></li>
+  </ul>
+  <h3 class="pub-year">2017</h3>
+  <ul class="pub-list2">
+    <li><strong>Shigemoto, Y.</strong>, Low, B., Borowa, D., &amp; Robitschek, C. (2017). Function of personal growth initiative on posttraumatic growth, posttraumatic stress, and depression over and above adaptive and maladaptive rumination. <em>Journal of Clinical Psychology, 73</em>, 1126–1145. <a href="https://doi.org/10.1002/jclp.22423" target="_blank" rel="noopener">https://doi.org/10.1002/jclp.22423</a></li>
+  </ul>
+  <h3 class="pub-year">2016</h3>
+  <ul class="pub-list2">
+    <li>Borowa, D., Robitschek, C., Harmon, K., &amp; <strong>Shigemoto, Y.</strong> (2016). Posttraumatic stress and growth in college military members and veterans: The role of personal growth initiative. <em>Journal of American College Health, 64</em>, 527–534. <a href="https://doi.org/10.1080/07448481.2016.1188395" target="_blank" rel="noopener">https://doi.org/10.1080/07448481.2016.1188395</a></li>
+    <li>Hannawa, A. F., <strong>Shigemoto, Y.</strong>, &amp; Little, T. D. (2016). Medical errors: Disclosure styles, interpersonal forgiveness, and outcomes. <em>Social Science and Medicine, 156</em>, 29–38. <a href="https://doi.org/10.1016/j.socscimed.2016.03.026" target="_blank" rel="noopener">https://doi.org/10.1016/j.socscimed.2016.03.026</a></li>
+    <li><strong>Shigemoto, Y.</strong>, Ashton, M. W., &amp; Robitschek, C. (2016). Predictors of growth in the aftermath of traumatic events: The role of personal growth initiative. <em>Journal of Loss and Trauma, 21</em>, 399–409. <a href="https://doi.org/10.1080/15325024.2015.1110446" target="_blank" rel="noopener">https://doi.org/10.1080/15325024.2015.1110446</a></li>
+  </ul>
+  <h3 class="pub-year">2015</h3>
+  <ul class="pub-list2">
+    <li><strong>Shigemoto, Y.</strong>, Thoen, M. A., Robitschek, C., &amp; Ashton, M. W. (2015). Assessing measurement invariance of the Personal Growth Initiative Scale-II among Hispanics, African Americans, and European Americans. <em>Journal of Counseling Psychology, 62</em>, 537–544. <a href="https://doi.org/10.1037/cou0000075" target="_blank" rel="noopener">https://doi.org/10.1037/cou0000075</a></li>
+  </ul>
+  <h3 class="pub-year">2013</h3>
+  <ul class="pub-list2">
+    <li><strong>Shigemoto, Y.</strong>, &amp; Poyrazli, S. (2013). Factors related to posttraumatic growth in U.S. and Japanese college students. <em>Psychological Trauma: Theory, Research, Practice, and Policy, 5</em>, 128–134. <a href="https://doi.org/10.1037/a0026647" target="_blank" rel="noopener">https://doi.org/10.1037/a0026647</a></li>
+  </ul>
+  <h3 class="pub-year">2012</h3>
+  <ul class="pub-list2">
+    <li><strong>Shigemoto, Y.</strong>, Ashton, M. W., &amp; Robitschek, C. (2012). How can positive psychology facilitate growth after traumatic experience? <em>Positive Psychology: Theory and Application, 9</em>, 19–20.</li>
+  </ul>
+
+  <h2 style="margin-top:56px">Book chapters</h2>
+  <ul class="pub-list2">
+    <li>Kalayjian, A., <strong>Shigemoto, Y.</strong>, &amp; Patel, B. (2010). Earthquake in Soviet Armenia: Coping, integration, and meaning-making. In A. Kalayjian &amp; D. Eugene (Eds.), <em>Mass trauma and emotional healing around the world: Rituals and practices for resilience</em> (Vol. 1, pp. 1–21). ABC-CLIO.</li>
+    <li>Kalayjian, A., Donovan, E., &amp; <strong>Shigemoto, Y.</strong> (2010). Coping with Hurricane Andrew: Preparedness, resilience, and meaning-making. In A. Kalayjian &amp; D. Eugene (Eds.), <em>Mass trauma and emotional healing around the world: Rituals and practices for resilience</em> (Vol. 1, pp. 73–91). ABC-CLIO.</li>
+  </ul>
+
+  <h2 style="margin-top:56px">Conference presentations</h2>
+  <p class="note">* Graduate student mentee &nbsp; ** Undergraduate student mentee</p>
+  <h3 class="pub-year">2026</h3>
+  <ul class="pub-list2">
+    <li>Chowdhury, R., Ma, P., Wang, H., &amp; <strong>Shigemoto, Y.</strong> (2026, November). <em>Acculturation stress and mental health among older Asian Americans: Evidence from a national survey</em> [Paper presentation]. 154th Annual Meeting of the American Public Health Association, San Antonio, TX, United States.</li>
+    <li>Wang, H., <strong>Shigemoto, Y.</strong>, Chiang, S. C., &amp; Ma, P. (2026, November). <em>Mental health help-seeking among older Asian Americans: Barriers and determinants</em> [Paper presentation]. 154th Annual Meeting of the American Public Health Association, San Antonio, TX, United States.</li>
+    <li>Giniewski, W.*, Landis, K.**, Du, J.**, &amp; <strong>Shigemoto, Y.</strong> (2026, August). <em>A person-centered exploration of students’ resource use and wellbeing</em> [Poster presentation]. Annual Convention of the American Psychological Association, Washington, DC, United States.</li>
+    <li>Landis, K.**, Giniewski, W.*, &amp; <strong>Shigemoto, Y.</strong> (2026, April). <em>Post-traumatic growth weakens the positive relationship between resource loss and subjective wellbeing after the 2025 California wildfires</em> [Poster presentation]. Psychology Graduate Student Organization, Gainesville, FL, United States.</li>
+    <li>Landis, K.**, Giniewski, W.*, &amp; <strong>Shigemoto, Y.</strong> (2026, April). <em>Community resilience moderates the association between resource loss and subjective wellbeing after the 2025 California wildfires</em> [Poster presentation]. Center for Undergraduate Research 2026 Spring Symposium, Gainesville, FL, United States.</li>
+  </ul>
+  <h3 class="pub-year">2025</h3>
+  <ul class="pub-list2">
+    <li><strong>Shigemoto, Y.</strong> (2025, August). <em>Disparities in perceiving community resilience based on residential location</em> [Poster presentation]. Annual Convention of the American Psychological Association, Denver, CO, United States.</li>
+  </ul>
+  <h3 class="pub-year">2022</h3>
+  <ul class="pub-list2">
+    <li>Yeh, S-Y., Ma, P., Chen, L., <strong>Shigemoto, Y.</strong>, &amp; He, R. (2022, November). <em>Racism concerns and experiences among older Chinese Americans during the COVID-19 pandemic</em> [Paper presentation]. 150th Annual Meeting of the American Public Health Association, Boston, MA, United States.</li>
+    <li>Ma, P., Fan, Q., Farokhnia, R., Li, R., <strong>Shigemoto, Y.</strong>, &amp; Chen, L. (2022, November). <em>Applying the positive deviance approach to promote mental health service utilization among older Asian Americans with psychiatric disorders</em> [Paper presentation]. 150th Annual Meeting of the American Public Health Association, Boston, MA, United States.</li>
+    <li><strong>Shigemoto, Y.</strong>, Ma, P., Chen, L., He, R., Yeh, S-Y., &amp; Swofford, C. (2022, April). <em>Mental health among older Chinese Americans in Texas during the COVID-19 pandemic</em> [Poster presentation]. Prairie View A&amp;M University Faculty Research Conference, Prairie View, TX, United States.</li>
+  </ul>
+  <h3 class="pub-year">2021</h3>
+  <ul class="pub-list2">
+    <li>Ma, P., Li, R., <strong>Shigemoto, Y.</strong>, &amp; Chen, L. S. (2021, November). <em>Trauma exposure, mental disorder, and risk of suicide ideation among aging U.S.</em> [Poster presentation]. Annual Scientific Meeting of the Gerontological Society of America.</li>
+    <li>Fortner, M., Dominguez, U., Thoen, M. A., Tran, N. N. B., &amp; <strong>Shigemoto, Y.</strong> (2021, August). <em>Psychometrics of wellness measures with a law enforcement officer sample</em> [Poster presentation]. 129th Annual Convention of the American Psychological Association.</li>
+  </ul>
+  <h3 class="pub-year">2020</h3>
+  <ul class="pub-list2">
+    <li>Ford, K.**, &amp; <strong>Shigemoto, Y.</strong> (2020, April). <em>Exploring the association between personal growth initiative and posttraumatic reactions among African American college students after stressful/challenging events</em> [Conference presentation]. Prairie View A&amp;M University 15th Annual Research Symposium, Prairie View, TX, United States. (Conference canceled due to the COVID-19 pandemic)</li>
+  </ul>
+  <h3 class="pub-year">2019</h3>
+  <ul class="pub-list2">
+    <li>Kim, S. Y., <strong>Shigemoto, Y.</strong>, Neduvelil, A., &amp; Grzywacz, J. (2019, August). <em>Stability of work-family enrichment: Is it just being happy or having certain personality traits?</em> [Paper presentation]. 127th Annual Convention of the American Psychological Association, Washington, DC, United States.</li>
+    <li>Banks, A. N.*, &amp; <strong>Shigemoto, Y.</strong> (2019, April). <em>Examining the impact of community resilience on psychological distress after Hurricane Harvey</em> [Poster presentation]. Prairie View A&amp;M University 14th Annual Research Symposium, Prairie View, TX, United States.</li>
+  </ul>
+  <h3 class="pub-year">2018</h3>
+  <ul class="pub-list2">
+    <li>Kim, S. Y., <strong>Shigemoto, Y.</strong>, Neduvelil, A., &amp; Hamilton, N. (2018, April). <em>Survive or thrive: The longitudinal relationship between chronic pain and well-being</em> [Paper presentation]. 39th Annual Meeting of the Society of Behavioral Medicine, New Orleans, LA, United States.</li>
+  </ul>
+  <h3 class="pub-year">2017</h3>
+  <ul class="pub-list2">
+    <li><strong>Shigemoto, Y.</strong>, Harmon, K. A., &amp; Robitschek, C. (2017, August). <em>An application of exploratory structural equation modeling to a positive psychological construct</em> [Poster presentation]. 125th Annual Convention of the American Psychological Association, Washington, DC, United States.</li>
+    <li>Eslami, H., &amp; <strong>Shigemoto, Y.</strong> (2017, August). Further applications of Intentional Growth Training. In C. Robitschek (Chair), <em>Applications of Intentional Growth Training</em> [Symposium]. 125th Annual Convention of the American Psychological Association, Washington, DC, United States.</li>
+  </ul>
+  <h3 class="pub-year">2016</h3>
+  <ul class="pub-list2">
+    <li>Harmon, K. A., <strong>Shigemoto, Y.</strong>, &amp; Robitschek, C. (2016, August). <em>Personal growth initiative and college students’ experience of depression and diagnosis</em> [Poster presentation]. 124th Annual Convention of the American Psychological Association, Denver, CO, United States.</li>
+    <li>Harmon, K. A., <strong>Shigemoto, Y.</strong>, Borowa, D., Robitschek, C., &amp; Eslami, H. (2016, May). <em>Further validation of the Personal Growth Initiative Scale–II: Gender measurement invariance</em> [Poster presentation]. 28th Annual Convention of the Association for Psychological Science, Chicago, IL, United States.</li>
+  </ul>
+  <h3 class="pub-year">2015</h3>
+  <ul class="pub-list2">
+    <li><strong>Shigemoto, Y.</strong>, Hom, K., Caston, J., &amp; Robitschek, C. (2015, August). <em>The effect of personal growth initiative on posttraumatic reactions through emotion</em> [Poster presentation]. 123rd Annual Convention of the American Psychological Association, Toronto, ON, Canada.</li>
+    <li><strong>Shigemoto, Y.</strong>, &amp; Robitschek, C. (2015, August). <em>Exploring subgroups in personal growth initiative and posttraumatic reactions: A latent profile analysis</em> [Poster presentation]. 123rd Annual Convention of the American Psychological Association, Toronto, ON, Canada.</li>
+    <li>Borowa, D., Robitschek, C., Harmon, K., &amp; <strong>Shigemoto, Y.</strong> (2015, August). <em>Personal growth initiative: Protecting against distress and promoting growth in the military</em> [Paper presentation]. 123rd Annual Convention of the American Psychological Association, Toronto, ON, Canada.</li>
+  </ul>
+  <h3 class="pub-year">2014</h3>
+  <ul class="pub-list2">
+    <li><strong>Shigemoto, Y.</strong>, Low, B., Borowa, D., &amp; Robitschek, C. (2014, August). <em>The role of personal growth initiative on different forms of rumination following traumatic events</em> [Poster presentation]. 122nd Annual Convention of the American Psychological Association, Washington, DC, United States.</li>
+    <li><strong>Shigemoto, Y.</strong> (2014, February). Publishing student research. In H. Takooshian (Chair), <em>Publishing international and cross-cultural work</em> [Symposium]. 43rd Annual Meeting of the Society for Cross-Cultural Research, Charleston, SC, United States.</li>
+  </ul>
+  <h3 class="pub-year">2012</h3>
+  <ul class="pub-list2">
+    <li><strong>Shigemoto, Y.</strong>, Ashton, M. W., &amp; Robitschek, C. (2012, August). <em>Predictors of growth in the aftermath of traumatic events: The role of personal growth initiative</em> [Poster presentation]. 120th Annual Convention of the American Psychological Association, Orlando, FL, United States.</li>
+    <li><strong>Shigemoto, Y.</strong>, Thoen, M. A., Becerra, A., Glogau, M. V., Ashton, M. W., &amp; Robitschek, C. (2012, August). <em>Cross-cultural validity of the PGIS-II with minority populations</em> [Poster presentation]. 120th Annual Convention of the American Psychological Association, Orlando, FL, United States.</li>
+  </ul>
+  <h3 class="pub-year">2011</h3>
+  <ul class="pub-list2">
+    <li><strong>Shigemoto, Y.</strong> (2011, August). <em>Relation between domains of posttraumatic growth and posttraumatic stress in U.S. and Japanese college students</em> [Poster presentation]. 119th Annual Convention of the American Psychological Association, Washington, DC, United States.</li>
+  </ul>
+  <h3 class="pub-year">2010</h3>
+  <ul class="pub-list2">
+    <li><strong>Shigemoto, Y.</strong>, &amp; Poyrazli, S. (2010, August). <em>Factors affecting posttraumatic growth in U.S. and Japanese college students</em> [Poster presentation]. 118th Annual Convention of the American Psychological Association, San Diego, CA, United States.</li>
+  </ul>
+  <h3 class="pub-year">2009</h3>
+  <ul class="pub-list2">
+    <li><strong>Shigemoto, Y.</strong> (2009, August). <em>Exploring posttraumatic growth between U.S. and Japanese college students</em> [Poster presentation]. 117th Annual Convention of the American Psychological Association, Toronto, ON, Canada.</li>
+    <li><strong>Shigemoto, Y.</strong> (2009, March). Examining posttraumatic growth in Japanese college students. In A. Kalayjian (Chair), <em>Post traumatic growth and cultivating the seeds of forgiveness and meaning-making</em> [Symposium]. 80th Annual Meeting of the Eastern Psychological Association, Pittsburgh, PA, United States.</li>
+  </ul>
+
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h4>Shigemoto Lab</h4>
+      <p>Department of Psychology · University of Florida<br>945 Center Dr. · Gainesville, FL 32611</p>
+      <p style="margin-top:10px"><a href="mailto:yshigemoto@ufl.edu">yshigemoto@ufl.edu</a></p>
+    </div>
+    <p class="fineprint">© 2026 Shigemoto Lab</p>
+  </div>
+</footer>
+
+</body>
+</html>
