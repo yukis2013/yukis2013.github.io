@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://shigemotolab.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shigemotolab.com/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://shigemotolab.com/ja/"/>
+  </url>
+  <url>
+    <loc>https://shigemotolab.com/ja/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shigemotolab.com/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://shigemotolab.com/ja/"/>
+  </url>
+  <url>
+    <loc>https://shigemotolab.com/research.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shigemotolab.com/research.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://shigemotolab.com/ja/research.html"/>
+  </url>
+  <url>
+    <loc>https://shigemotolab.com/ja/research.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shigemotolab.com/research.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://shigemotolab.com/ja/research.html"/>
+  </url>
+  <url>
+    <loc>https://shigemotolab.com/people.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shigemotolab.com/people.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://shigemotolab.com/ja/people.html"/>
+  </url>
+  <url>
+    <loc>https://shigemotolab.com/ja/people.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shigemotolab.com/people.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://shigemotolab.com/ja/people.html"/>
+  </url>
+  <url>
+    <loc>https://shigemotolab.com/publications.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shigemotolab.com/publications.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://shigemotolab.com/ja/publications.html"/>
+  </url>
+  <url>
+    <loc>https://shigemotolab.com/ja/publications.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shigemotolab.com/publications.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://shigemotolab.com/ja/publications.html"/>
+  </url>
+  <url>
+    <loc>https://shigemotolab.com/prospective-students.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shigemotolab.com/prospective-students.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://shigemotolab.com/ja/prospective-students.html"/>
+  </url>
+  <url>
+    <loc>https://shigemotolab.com/ja/prospective-students.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shigemotolab.com/prospective-students.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://shigemotolab.com/ja/prospective-students.html"/>
+  </url>
+</urlset>
